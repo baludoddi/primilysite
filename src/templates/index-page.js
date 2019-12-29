@@ -17,7 +17,26 @@ export class IndexPageTemplate extends React.Component {
     const { page } = this.props;
     return (
  <div>
-    <div
+   <div className="row"><div className="col s12"></div></div>
+     <div className="carousel carousel-slider center">
+  <div className="carousel-item blue white-text" href="#one!">
+    <h2>First Panel</h2>
+    <p className="white-text">This is your first panel</p>
+  </div>
+  <div className="carousel-item amber white-text" href="#two!">
+    <h2>Second Panel</h2>
+    <p className="white-text">This is your second panel</p>
+  </div>
+  <div className="carousel-item green white-text" href="#three!">
+    <h2>Third Panel</h2>
+    <p className="white-text">This is your third panel</p>
+  </div>
+  <div className="carousel-item red white-text" href="#four!">
+    <h2>Fourth Panel</h2>
+    <p className="white-text">This is your fourth panel</p>
+  </div>
+</div>
+    {/* <div
       className="full-width-image margin-top-0"
       style={{
         backgroundImage: `url(${
@@ -64,7 +83,7 @@ export class IndexPageTemplate extends React.Component {
           {page.subheading}
         </h3>
       </div>
-    </div>
+    </div> */}
     <section className="section section--gradient">
       <div className="container">
         <div className="section">
@@ -74,6 +93,9 @@ export class IndexPageTemplate extends React.Component {
                 <div className="content">
                   <div className="tile">
                     <h1 className="title">{page.mainpitch.title}</h1>
+                  </div>
+                  <div className="tile">
+                    <h1 className="title">{page.feature}</h1>
                   </div>
                   <div className="tile">
                     <h3 className="subtitle">{page.mainpitch.description}</h3>
@@ -176,6 +198,7 @@ export const pageQuery = graphql`
           title
           description
         }
+        feature
         description
         intro {
           blurbs {
